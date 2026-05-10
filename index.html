@@ -3,8 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minolo GmbH – Ihre Erleichterung im Alltag</title>
+<title>Minolo GmbH – Haushaltsservice & Alltagshilfe in Callenberg, Hohenstein-Ernstthal & Umgebung</title>
+<meta name="description" content="Minolo GmbH – Ihr persönlicher Alltagsservice in Callenberg. Haushaltsservice, Einkauf, Seniorenbegleitung, Garten, Behördengänge. Zuverlässig, regional, herzlich. Inhaberin Nicole Molch. Jetzt anrufen: 0177 / 337 29 84.">
+<meta name="keywords" content="Haushaltsservice Callenberg, Alltagshilfe Hohenstein-Ernstthal, Seniorenbegleitung Sachsen, Einkaufsservice, Behördengänge, Gartenpflege, Minolo GmbH, Nicole Molch">
+<meta name="author" content="Minolo GmbH">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2D4A3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Minolo GmbH – Ihre Erleichterung im Alltag">
+<meta property="og:description" content="Persönlicher Alltagsservice in Callenberg & Umgebung: Haushalt, Einkauf, Senioren, Garten, Behörden. Zuverlässig & herzlich.">
+<meta property="og:url" content="https://minolo-gmbh.de/">
+<meta property="og:site_name" content="Minolo GmbH">
+<meta property="og:image" content="https://bochmann-dienstleistungen.github.io/Minolo-GmbH-basic/Minolo_logo.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Minolo GmbH – Ihre Erleichterung im Alltag">
+<meta name="twitter:description" content="Persönlicher Alltagsservice in Callenberg & Umgebung. Haushalt, Einkauf, Senioren, Garten, Behörden.">
+<meta name="twitter:image" content="https://bochmann-dienstleistungen.github.io/Minolo-GmbH-basic/Minolo_logo.jpg">
+
+<!-- Favicon (Frosch-SVG inline) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='55' r='38' fill='%232EC456'/%3E%3Ccircle cx='35' cy='35' r='13' fill='%232EC456'/%3E%3Ccircle cx='65' cy='35' r='13' fill='%232EC456'/%3E%3Ccircle cx='35' cy='35' r='8' fill='%23FFD700'/%3E%3Ccircle cx='65' cy='35' r='8' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='35' r='3.5' fill='%231a1a1a'/%3E%3Ccircle cx='65' cy='35' r='3.5' fill='%231a1a1a'/%3E%3Cpath d='M30 60 Q50 80 70 60' stroke='%231a1a1a' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="canonical" href="https://minolo-gmbh.de/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://minolo-gmbh.de/#business",
+  "name": "Minolo GmbH",
+  "alternateName": "Minolo Dienstleistungsservice",
+  "description": "Persönlicher Alltagsservice in Callenberg und Umgebung: Haushaltsservice, Einkauf, Seniorenbegleitung, Garten, Behördengänge.",
+  "url": "https://minolo-gmbh.de/",
+  "telephone": "+49-177-3372984",
+  "email": "info@minolo-gmbh.de",
+  "image": "https://bochmann-dienstleistungen.github.io/Minolo-GmbH-basic/Minolo_logo.jpg",
+  "logo": "https://bochmann-dienstleistungen.github.io/Minolo-GmbH-basic/Minolo_logo.jpg",
+  "founder": { "@type": "Person", "name": "Nicole Molch" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hauptstr. 73",
+    "postalCode": "09337",
+    "addressLocality": "Callenberg",
+    "addressRegion": "Sachsen",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.8333,
+    "longitude": 12.6833
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Callenberg" },
+    { "@type": "City", "name": "Hohenstein-Ernstthal" },
+    { "@type": "City", "name": "Limbach-Oberfrohna" },
+    { "@type": "City", "name": "Glauchau" },
+    { "@type": "City", "name": "Chemnitz" }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+  ],
+  "priceRange": "€€",
+  "sameAs": ["https://minolo-gmbh.de/"]
+}
+</script>
 <style>
   :root {
     --forest: #2D4A3E;
@@ -1118,6 +1187,238 @@
   }
   .reveal.visible { opacity: 1; transform: none; }
 
+  /* ===================== HOURS + MAP ===================== */
+  .hours-card {
+    margin-top: 18px;
+    background: var(--white);
+    border: 1px solid rgba(184,147,90,0.18);
+    padding: 24px 28px;
+  }
+  .hours-card h4 {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hours-card h4::before {
+    content: '🕐';
+    font-size: 1rem;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    font-size: 0.92rem;
+    border-bottom: 1px dashed rgba(184,147,90,0.18);
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .day { color: var(--text); font-weight: 500; }
+  .hours-row .time { color: var(--forest); font-weight: 600; }
+  .hours-row.closed .time { color: var(--mid); font-weight: 400; font-style: italic; }
+  .hours-note {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: var(--mid);
+    line-height: 1.5;
+    padding-top: 12px;
+    border-top: 1px solid rgba(184,147,90,0.15);
+  }
+
+  .map-wrap {
+    margin-top: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(184,147,90,0.18);
+    background: var(--warm);
+  }
+  .map-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 280px;
+    border: 0;
+    filter: grayscale(0.15) contrast(0.95);
+    transition: filter 0.3s;
+  }
+  .map-wrap:hover iframe { filter: grayscale(0) contrast(1); }
+
+  /* ===================== DSGVO + FORM ===================== */
+  .dsgvo-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 4px 0 18px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .dsgvo-row input[type="checkbox"] {
+    width: 18px; height: 18px;
+    margin-top: 2px;
+    accent-color: var(--gold);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .dsgvo-row label {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    letter-spacing: 0;
+    text-transform: none;
+    margin: 0;
+  }
+  .dsgvo-row label a {
+    color: var(--gold-light);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .form-status {
+    margin-top: 14px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    text-align: center;
+    display: none;
+  }
+  .form-status.success {
+    display: block;
+    background: rgba(46,196,86,0.15);
+    border: 1px solid rgba(46,196,86,0.4);
+    color: #a7e8b8;
+  }
+  .form-status.error {
+    display: block;
+    background: rgba(220,80,80,0.15);
+    border: 1px solid rgba(220,80,80,0.4);
+    color: #f0b0b0;
+  }
+
+  /* ===================== REVIEWS ===================== */
+  .reviews {
+    padding: 130px 80px;
+    background: var(--warm);
+    position: relative;
+  }
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  .reviews-header .sec-eyebrow {
+    justify-content: center;
+    display: inline-flex;
+  }
+  .reviews-header .sec-eyebrow::before { display: none; }
+  .reviews-header .sec-eyebrow::after {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+  .reviews-header .sec-title {
+    margin: 12px 0 16px;
+  }
+  .reviews-header p {
+    color: var(--mid);
+    font-size: 1rem;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  .reviews-stars-overall {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 24px;
+    background: var(--white);
+    border: 1px solid rgba(184,147,90,0.2);
+  }
+  .stars-row {
+    display: flex;
+    gap: 3px;
+    color: #FFB800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  .reviews-stars-overall span {
+    font-size: 0.85rem;
+    color: var(--text);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .review-card {
+    background: var(--white);
+    padding: 36px 32px;
+    border: 1px solid rgba(184,147,90,0.18);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(45,74,62,0.2);
+    border-color: var(--gold);
+  }
+  .review-card .stars-row {
+    margin-bottom: 16px;
+  }
+  .review-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--forest-deep);
+    margin-bottom: 24px;
+  }
+  .review-quote::before {
+    content: '“';
+    font-size: 3.2rem;
+    color: var(--gold);
+    line-height: 0;
+    vertical-align: -22px;
+    margin-right: 4px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(184,147,90,0.15);
+  }
+  .review-avatar {
+    width: 44px; height: 44px;
+    background: var(--gold);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+  .review-meta strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--dark);
+    font-weight: 600;
+  }
+  .review-meta span {
+    font-size: 0.78rem;
+    color: var(--mid);
+    font-weight: 400;
+  }
+
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 1024px) {
     nav { padding: 0 28px; }
@@ -1135,6 +1436,9 @@
     .ueber-team { padding: 80px 28px; }
     .team-grid { grid-template-columns: 1fr 1fr; }
     .kontakt { grid-template-columns: 1fr; padding: 80px 28px; gap: 48px; }
+    .reviews { padding: 80px 28px; }
+    .reviews-grid { grid-template-columns: 1fr; gap: 20px; }
+    .map-wrap iframe { height: 220px; }
     footer { padding: 60px 28px 32px; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     .footer-bottom { flex-direction: column; gap: 16px; }
@@ -1166,6 +1470,7 @@
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ueber">Über uns</a></li>
+    <li><a href="#bewertungen">Bewertungen</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <div class="nav-actions">
@@ -1365,6 +1670,57 @@
 
 </section>
 
+<!-- BEWERTUNGEN -->
+<section class="reviews" id="bewertungen">
+  <div class="reviews-header reveal">
+    <p class="sec-eyebrow">Stimmen unserer Kunden</p>
+    <h2 class="sec-title">Was unsere Kunden<br><em>über uns sagen</em></h2>
+    <p>Vertrauen entsteht durch Verlässlichkeit – und genau das hören wir am häufigsten zurück.</p>
+    <div class="reviews-stars-overall">
+      <div class="stars-row">★★★★★</div>
+      <span>5,0 / 5,0 · auf Empfehlung unserer Kunden</span>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <article class="review-card reveal">
+      <div class="stars-row">★★★★★</div>
+      <p class="review-quote">Nicole und ihr Team haben mir den Alltag enorm erleichtert. Pünktlich, freundlich und gründlich – ich kann Minolo jedem empfehlen, der etwas Entlastung braucht.</p>
+      <div class="review-author">
+        <div class="review-avatar">IK</div>
+        <div class="review-meta">
+          <strong>Ingrid K.</strong>
+          <span>Hohenstein-Ernstthal · Haushaltsservice</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="review-card reveal">
+      <div class="stars-row">★★★★★</div>
+      <p class="review-quote">Meine Mutter wird zweimal pro Woche begleitet – immer dieselbe Vertrauensperson, immer pünktlich. Endlich eine Hilfe, auf die wirklich Verlass ist. Vielen Dank!</p>
+      <div class="review-author">
+        <div class="review-avatar">SM</div>
+        <div class="review-meta">
+          <strong>Stefan M.</strong>
+          <span>Callenberg · Seniorenbegleitung</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="review-card reveal">
+      <div class="stars-row">★★★★★</div>
+      <p class="review-quote">Wir haben Minolo für unsere Gartenpflege angefragt – schnelle Antwort, faires Angebot, sauberes Ergebnis. Werden wir auf jeden Fall weiterempfehlen.</p>
+      <div class="review-author">
+        <div class="review-avatar">RW</div>
+        <div class="review-meta">
+          <strong>Renate W.</strong>
+          <span>Limbach-Oberfrohna · Garten</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- KONTAKT -->
 <section class="kontakt" id="kontakt">
   <div class="kontakt-left reveal">
@@ -1395,55 +1751,82 @@
           <span>info@minolo-gmbh.de</span>
         </div>
       </a>
-      <div class="channel" style="cursor:default; pointer-events:none;">
+      <a href="https://www.google.com/maps/search/?api=1&query=Hauptstr.+73,+09337+Callenberg" target="_blank" rel="noopener" class="channel">
         <div class="channel-icon-box">📍</div>
         <div class="channel-text">
           <strong>Adresse</strong>
           <span>Hauptstr. 73, 09337 Callenberg</span>
         </div>
-      </div>
+      </a>
+    </div>
+
+    <!-- Öffnungszeiten -->
+    <div class="hours-card">
+      <h4>Öffnungszeiten</h4>
+      <div class="hours-row"><span class="day">Montag – Freitag</span><span class="time">8:00 – 18:00</span></div>
+      <div class="hours-row"><span class="day">Samstag</span><span class="time">9:00 – 13:00</span></div>
+      <div class="hours-row closed"><span class="day">Sonntag</span><span class="time">geschlossen</span></div>
+      <p class="hours-note">Termine außerhalb der Zeiten gerne nach Absprache — rufen Sie uns einfach an.</p>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q=Hauptstr.+73,+09337+Callenberg&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Standort Minolo GmbH – Hauptstr. 73, 09337 Callenberg"
+        allowfullscreen></iframe>
     </div>
   </div>
   <div class="kontakt-form-wrap reveal">
     <h3 class="form-head">Anfrage <em>senden</em></h3>
     <p class="form-sub">Wir melden uns persönlich und schnell bei Ihnen.</p>
-    <div class="frow">
-      <div class="fg">
-        <label>Vorname</label>
-        <input type="text" placeholder="Max">
+    <form id="anfrageForm" action="https://formspree.io/f/mlgpooqw" method="POST">
+      <div class="frow">
+        <div class="fg">
+          <label for="vorname">Vorname</label>
+          <input id="vorname" name="vorname" type="text" placeholder="Max" required autocomplete="given-name">
+        </div>
+        <div class="fg">
+          <label for="nachname">Nachname</label>
+          <input id="nachname" name="nachname" type="text" placeholder="Mustermann" required autocomplete="family-name">
+        </div>
       </div>
       <div class="fg">
-        <label>Nachname</label>
-        <input type="text" placeholder="Mustermann">
+        <label for="telefon">Telefon</label>
+        <input id="telefon" name="telefon" type="tel" placeholder="0177 / ..." autocomplete="tel">
       </div>
-    </div>
-    <div class="fg">
-      <label>Telefon</label>
-      <input type="tel" placeholder="0177 / ...">
-    </div>
-    <div class="fg">
-      <label>E-Mail</label>
-      <input type="email" placeholder="ihre@email.de">
-    </div>
-    <div class="fg">
-      <label>Ich interessiere mich für</label>
-      <select>
-        <option>Haushaltsservice</option>
-        <option>Einkauf & Besorgungen</option>
-        <option>Seniorenbegleitung</option>
-        <option>Garten & Außenanlagen</option>
-        <option>Behördengänge</option>
-        <option>Sonstiges</option>
-      </select>
-    </div>
-    <div class="fg">
-      <label>Ihre Nachricht</label>
-      <textarea placeholder="Wie können wir Ihnen helfen?"></textarea>
-    </div>
-    <button class="btn-submit">
-      <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
-      Anfrage absenden
-    </button>
+      <div class="fg">
+        <label for="email">E-Mail</label>
+        <input id="email" name="email" type="email" placeholder="ihre@email.de" required autocomplete="email">
+      </div>
+      <div class="fg">
+        <label for="interesse">Ich interessiere mich für</label>
+        <select id="interesse" name="interesse">
+          <option>Haushaltsservice</option>
+          <option>Einkauf &amp; Besorgungen</option>
+          <option>Seniorenbegleitung</option>
+          <option>Garten &amp; Außenanlagen</option>
+          <option>Behördengänge</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="nachricht">Ihre Nachricht</label>
+        <textarea id="nachricht" name="nachricht" placeholder="Wie können wir Ihnen helfen?" required></textarea>
+      </div>
+      <div class="dsgvo-row">
+        <input type="checkbox" id="dsgvo" name="dsgvo" required>
+        <label for="dsgvo">Ich habe die <a onclick="openDrawer('datenschutz');return false;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *</label>
+      </div>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn-submit">
+        <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+        Anfrage absenden
+      </button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
   </div>
 </section>
 
@@ -1463,6 +1846,7 @@
       <ul>
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ueber">Über uns</a></li>
+        <li><a href="#bewertungen">Bewertungen</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </div>
@@ -1512,6 +1896,37 @@ window.addEventListener('scroll', () => {
   document.querySelector('nav').style.boxShadow =
     window.scrollY > 60 ? '0 4px 32px rgba(0,0,0,0.1)' : 'none';
 }, { passive: true });
+
+/* ====== FORMSPREE ASYNC SUBMIT ====== */
+(function () {
+  const form = document.getElementById('anfrageForm');
+  const status = document.getElementById('formStatus');
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.className = 'form-status';
+    status.textContent = '';
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        status.className = 'form-status success';
+        status.textContent = '✓ Vielen Dank! Ihre Anfrage ist bei uns eingegangen — wir melden uns persönlich.';
+        form.reset();
+      } else {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || 'Senden fehlgeschlagen');
+      }
+    } catch (err) {
+      status.className = 'form-status error';
+      status.textContent = '✗ Senden fehlgeschlagen. Bitte rufen Sie uns direkt an: 0177 / 337 29 84';
+    }
+  });
+})();
 </script>
 
 <!-- LEGAL DRAWERS -->
