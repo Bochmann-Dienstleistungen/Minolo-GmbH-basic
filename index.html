@@ -25,8 +25,11 @@
 <meta name="twitter:description" content="Persönlicher Alltagsservice in Callenberg & Umgebung. Haushalt, Einkauf, Senioren, Garten, Behörden.">
 <meta name="twitter:image" content="https://bochmann-dienstleistungen.github.io/Minolo-GmbH-basic/Minolo_logo.jpg">
 
-<!-- Favicon (Frosch-SVG inline) -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='55' r='38' fill='%232EC456'/%3E%3Ccircle cx='35' cy='35' r='13' fill='%232EC456'/%3E%3Ccircle cx='65' cy='35' r='13' fill='%232EC456'/%3E%3Ccircle cx='35' cy='35' r='8' fill='%23FFD700'/%3E%3Ccircle cx='65' cy='35' r='8' fill='%23FFD700'/%3E%3Ccircle cx='35' cy='35' r='3.5' fill='%231a1a1a'/%3E%3Ccircle cx='65' cy='35' r='3.5' fill='%231a1a1a'/%3E%3Cpath d='M30 60 Q50 80 70 60' stroke='%231a1a1a' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<!-- Favicon — echter Minolo-Molch -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png">
 
 <link rel="canonical" href="https://minolo-gmbh.de/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -144,6 +147,55 @@
 
   .nav-actions { display: flex; gap: 12px; align-items: center; }
 
+  /* Mobile burger */
+  .nav-burger {
+    display: none;
+    width: 42px; height: 42px;
+    background: transparent;
+    border: 1px solid rgba(45,74,62,0.2);
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    transition: all 0.2s;
+  }
+  .nav-burger span {
+    display: block;
+    width: 18px; height: 2px;
+    background: var(--forest);
+    transition: all 0.3s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(184,147,90,0.18);
+    padding: 24px 28px 32px;
+    transform: translateY(-110%);
+    transition: transform 0.4s cubic-bezier(.22,1,.36,1);
+    z-index: 199;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .mobile-menu.open { transform: translateY(0); }
+  .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .mobile-menu a {
+    display: block;
+    padding: 16px 4px;
+    text-decoration: none;
+    color: var(--forest);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(184,147,90,0.15);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+
   .nav-tel {
     font-size: 0.9rem;
     font-weight: 600;
@@ -173,41 +225,71 @@
   /* ===================== HERO ===================== */
   .hero {
     height: 100vh;
-    min-height: 700px;
+    min-height: 720px;
+    max-height: 900px;
     position: relative;
-    display: flex;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    background: var(--forest-deep);
     overflow: hidden;
   }
 
   .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    overflow: hidden;
+    background: var(--forest-deep);
+    padding: 60px 60px 60px 0;
   }
-  .hero-bg img {
+  .hero-slide {
+    position: absolute;
+    inset: 60px 60px 60px 0;
+    opacity: 0;
+    animation: heroFade 21s infinite;
+  }
+  .hero-slide:nth-child(1) { animation-delay: 0s; }
+  .hero-slide:nth-child(2) { animation-delay: 7s; }
+  .hero-slide:nth-child(3) { animation-delay: 14s; }
+  .hero-slide img {
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    transform: scale(1.04);
-    transition: transform 12s ease;
+    object-position: center center;
+    will-change: transform;
+    animation: kenBurns 21s infinite;
+    animation-delay: inherit;
   }
-  .hero:hover .hero-bg img { transform: scale(1.08); }
+  @keyframes heroFade {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    33%  { opacity: 1; }
+    38%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes kenBurns {
+    0%   { transform: scale(1.0) translate(0, 0); }
+    38%  { transform: scale(1.04) translate(-0.6%, -0.3%); }
+    100% { transform: scale(1.04) translate(-0.6%, -0.3%); }
+  }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(105deg, rgba(26,48,40,0.88) 0%, rgba(26,48,40,0.55) 55%, rgba(26,48,40,0.15) 100%),
-      linear-gradient(to top, rgba(26,48,40,0.75) 0%, transparent 45%);
-    z-index: 1;
+      linear-gradient(90deg, rgba(26,48,40,0.55) 0%, rgba(26,48,40,0.05) 14%, transparent 30%),
+      linear-gradient(to top, rgba(26,48,40,0.45) 0%, transparent 35%);
+    z-index: 2;
+    pointer-events: none;
   }
 
   .hero-content {
     position: relative;
     z-index: 3;
-    padding: 0 80px 110px;
-    max-width: 660px;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    padding: 60px 80px;
+    max-width: 720px;
   }
 
   .hero-tag {
@@ -303,13 +385,13 @@
 
   .hero-scroll-hint {
     position: absolute;
-    bottom: 44px; right: 64px;
+    bottom: 36px; left: 80px;
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.4);
     font-size: 0.65rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -328,12 +410,10 @@
   }
 
   .hero-trust {
-    position: absolute;
-    bottom: 80px;
-    right: 72px;
-    z-index: 3;
+    margin-top: 48px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
     opacity: 0;
     animation: fadeUp 1s 1.1s forwards;
@@ -342,11 +422,11 @@
   .hero-trust-item {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.07);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.13);
+    gap: 12px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
     border-left: 2px solid var(--gold);
   }
 
@@ -685,22 +765,16 @@
   .ueber-story-img {
     position: relative;
     overflow: hidden;
+    background: #f4ede1;
   }
   .ueber-story-img img {
     width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.55;
-    mix-blend-mode: luminosity;
-    transition: transform 8s ease;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
   }
-  .ueber-story:hover .ueber-story-img img { transform: scale(1.03); }
 
-  .ueber-story-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, transparent 60%, var(--forest-deep) 100%),
-                linear-gradient(to bottom, transparent 50%, rgba(26,48,40,0.8) 100%);
-  }
+  .ueber-story-overlay { display: none; }
 
   .ueber-story-text {
     padding: 100px 72px;
@@ -1421,10 +1495,34 @@
 
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 1024px) {
-    nav { padding: 0 28px; }
+    nav { padding: 0 20px; }
     .nav-links { display: none; }
-    .hero-content { padding: 0 32px 80px; }
-    .hero-trust { display: none; }
+    .nav-tel { display: none; }
+    .nav-burger { display: flex; }
+    .btn-wa-nav { padding: 10px 14px; font-size: 0.72rem; }
+    .btn-wa-nav span { display: none; }
+    .hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: 50vh auto;
+      height: auto;
+      max-height: none;
+      min-height: 0;
+    }
+    .hero-bg { grid-column: 1; grid-row: 1; padding: 0; }
+    .hero-slide { inset: 0; }
+    .hero-content {
+      grid-column: 1; grid-row: 2;
+      padding: 60px 28px 90px;
+      max-width: none;
+      align-self: start;
+    }
+    .hero-content::before { display: none; }
+    .hero-overlay { background: linear-gradient(to bottom, rgba(26,48,40,0.25) 0%, transparent 30%); }
+    .hero-trust {
+      flex-direction: column;
+      margin-top: 36px;
+    }
+    .hero-scroll-hint { display: none; }
     .vn-section { padding: 80px 28px; }
     .leistungen { padding: 80px 28px; }
     .leistungen-grid { grid-template-columns: 1fr 1fr; }
@@ -1475,21 +1573,42 @@
   </ul>
   <div class="nav-actions">
     <a href="tel:01773372984" class="nav-tel">0177 / 337 29 84</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <a href="https://wa.me/491773372984" class="btn-wa-nav" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
+      <span>WhatsApp</span>
     </a>
   </div>
 </nav>
 
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ueber">Über uns</a></li>
+    <li><a href="#bewertungen">Bewertungen</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="tel:01773372984">📞 0177 / 337 29 84</a></li>
+  </ul>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Gepflegtes Zuhause">
+    <div class="hero-slide">
+      <img src="https://images.pexels.com/photos/7818422/pexels-photo-7818422.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Behördengänge — wir begleiten Sie persönlich">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.pexels.com/photos/9462164/pexels-photo-9462164.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Sorgfältige Reinigung Ihres Zuhauses">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.pexels.com/photos/6591162/pexels-photo-6591162.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Einkaufsservice — wir bringen, was Sie brauchen">
+    </div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-tag">Alltagsservice · Callenberg & Umgebung</p>
     <h1 class="hero-title">
       Ihre <em>Erleichterung</em><br>
       im Alltag.
@@ -1506,21 +1625,6 @@
       </a>
     </div>
   </div>
-  <div class="hero-trust">
-    <div class="hero-trust-item">
-      <div class="hero-trust-icon">✓</div>
-      <span class="hero-trust-text">Zuverlässig & pünktlich</span>
-    </div>
-    <div class="hero-trust-item">
-      <div class="hero-trust-icon">📍</div>
-      <span class="hero-trust-text">Regional in Callenberg</span>
-    </div>
-    <div class="hero-trust-item">
-      <div class="hero-trust-icon">🤝</div>
-      <span class="hero-trust-text">Persönlich & diskret</span>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">Scroll</div>
 </section>
 
 <!-- STRIP MARQUEE -->
@@ -1890,6 +1994,26 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ====== MOBILE BURGER MENU ====== */
+(function () {
+  const burger = document.getElementById('navBurger');
+  const menu = document.getElementById('mobileMenu');
+  if (!burger || !menu) return;
+  const close = () => {
+    burger.classList.remove('open');
+    menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+  burger.addEventListener('click', () => {
+    const isOpen = burger.classList.toggle('open');
+    menu.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+})();
 
 /* ====== NAV SHADOW ON SCROLL ====== */
 window.addEventListener('scroll', () => {
