@@ -41,14 +41,11 @@
     border-bottom: 1px solid rgba(200,169,110,0.2);
   }
 
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: var(--dark);
-    letter-spacing: 0.02em;
+  .nav-logo img {
+    height: 48px;
+    width: auto;
+    display: block;
   }
-
-  .nav-logo span { color: var(--gold); }
 
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
@@ -65,17 +62,20 @@
   /* HERO */
   .hero {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
     padding-top: 72px;
+    background: var(--light);
   }
 
   .hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 64px 80px 80px;
-    background: var(--light);
+    padding: 80px 80px;
+    max-width: 780px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .hero-tag {
@@ -148,32 +148,6 @@
 
   .btn-whatsapp svg, .btn-primary svg { width: 18px; height: 18px; fill: currentColor; }
 
-  .hero-image {
-    position: relative;
-    overflow: hidden;
-    background: var(--dark);
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.85;
-    transition: transform 6s ease;
-  }
-
-  .hero-image:hover img { transform: scale(1.04); }
-
-  .hero-badge {
-    position: absolute;
-    bottom: 40px;
-    left: -20px;
-    background: var(--gold);
-    color: var(--white);
-    padding: 20px 32px 20px 40px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-  }
 
   /* LEISTUNGEN */
   .section { padding: 100px 80px; }
@@ -445,8 +419,6 @@
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-image { min-height: 50vw; }
     .hero-text { padding: 60px 24px; }
     .section { padding: 60px 24px; }
     .leistungen-grid { grid-template-columns: 1fr; }
@@ -468,7 +440,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Minolo <span>GmbH</span></div>
+  <div class="nav-logo"><img src="Minolo_logo.jpg" alt="Minolo GmbH"></div>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ueber">Über uns</a></li>
@@ -492,10 +464,6 @@
         WhatsApp
       </a>
     </div>
-  </div>
-  <div class="hero-image">
-    <img src="https://minolo-gmbh.de/wp-content/uploads/2023/11/MG_9864-935x1024.jpg" alt="Minolo GmbH Team">
-    <div class="hero-badge">Ihr Team vor Ort</div>
   </div>
 </section>
 
@@ -625,7 +593,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Minolo <span>GmbH</span></div>
+  <div class="footer-logo"><img src="Minolo_logo.jpg" alt="Minolo GmbH" style="height:40px;width:auto;display:block;filter:brightness(0) invert(1);opacity:0.9;"></div>
   <p>© 2024 Minolo GmbH · Nicole Molch · Callenberg · <a href="mailto:info@minolo-gmbh.de" style="color:var(--gold);">info@minolo-gmbh.de</a></p>
   <p><a href="#" style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Impressum</a> · <a href="#" style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Datenschutz</a></p>
 </footer>
