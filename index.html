@@ -918,19 +918,22 @@
   .team-avatar {
     width: 90px; height: 90px;
     border-radius: 50%;
-    background: var(--forest);
+    background: var(--gold);
+    color: var(--white);
     border: 2px solid rgba(184,147,90,0.4);
     margin: 0 auto 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
     overflow: hidden;
   }
-
-  .team-avatar img {
-    width: 100%; height: 100%;
-    object-fit: cover;
+  .team-avatar svg {
+    width: 38px; height: 38px;
+    fill: var(--white);
   }
 
   .team-name {
@@ -1750,21 +1753,21 @@
     <h2 class="sec-title">Persönlich &amp; <em>vor Ort</em></h2>
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-avatar">
-          <img src="https://minolo-gmbh.de/wp-content/uploads/2023/11/MG_9864-935x1024.jpg" alt="Nicole Molch">
-        </div>
+        <div class="team-avatar">NM</div>
         <p class="team-name">Nicole Molch</p>
         <p class="team-role">Inhaberin & Geschäftsführerin</p>
         <p class="team-desc">Mit Herzblut dabei, seit Tag eins. Nicole führt das Unternehmen persönlich und ist direkter Ansprechpartner für jeden Kunden.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-avatar" style="font-size:2rem;">👩</div>
+        <div class="team-avatar">MT</div>
         <p class="team-name">Ihr Team</p>
         <p class="team-role">Alltagsservice & Begleitung</p>
         <p class="team-desc">Unser eingespieltes Team kennt die Region, die Kunden und ihre Bedürfnisse — zuverlässig und immer freundlich.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-avatar" style="font-size:2rem;">📞</div>
+        <div class="team-avatar">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.01L6.6 10.8z"/></svg>
+        </div>
         <p class="team-name">Direkt erreichbar</p>
         <p class="team-role">Telefon & WhatsApp</p>
         <p class="team-desc">Kein Callcenter, keine Warteschleifen. Sie erreichen uns direkt — per Anruf oder WhatsApp-Nachricht.</p>
