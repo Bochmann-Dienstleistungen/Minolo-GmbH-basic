@@ -1120,6 +1120,81 @@
   .btn-submit:hover { background: var(--white); color: var(--dark); }
   .btn-submit svg { width: 15px; height: 15px; fill: currentColor; }
 
+  /* ===================== CTA-STACK (statt Formular) ===================== */
+  .cta-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .cta-large {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 24px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-large::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--gold);
+    transition: width 0.3s;
+    z-index: 0;
+  }
+  .cta-large > * { position: relative; z-index: 1; }
+  .cta-large:hover { border-color: var(--gold); }
+  .cta-large:hover::before { width: 100%; }
+  .cta-large.cta-wa:hover { border-color: #25D366; }
+  .cta-large.cta-wa::before { background: #25D366; }
+
+  .cta-icon {
+    width: 48px; height: 48px;
+    background: var(--gold);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s;
+  }
+  .cta-large.cta-wa .cta-icon { background: #25D366; }
+  .cta-icon svg { width: 22px; height: 22px; fill: var(--white); }
+
+  .cta-text { flex: 1; min-width: 0; }
+  .cta-text strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .cta-text span {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  .cta-large:hover .cta-text span { color: rgba(255,255,255,0.85); }
+
+  .cta-arrow {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .cta-large:hover .cta-arrow { transform: translateX(4px); color: var(--white); }
+  .cta-large.cta-wa .cta-arrow { color: #b5f0c8; }
+
   /* ===================== FOOTER ===================== */
   footer {
     background: #0e1e18;
@@ -1887,53 +1962,42 @@
     </div>
   </div>
   <div class="kontakt-form-wrap reveal">
-    <h3 class="form-head">Anfrage <em>senden</em></h3>
-    <p class="form-sub">Wir melden uns persönlich und schnell bei Ihnen.</p>
-    <form id="anfrageForm" action="https://formspree.io/f/mlgpooqw" method="POST">
-      <div class="frow">
-        <div class="fg">
-          <label for="vorname">Vorname</label>
-          <input id="vorname" name="vorname" type="text" placeholder="Max" required autocomplete="given-name">
+    <h3 class="form-head">So <em>erreichen</em> Sie uns</h3>
+    <p class="form-sub">Persönlich, schnell und ohne Bürokratie. Wählen Sie den Weg, der für Sie am bequemsten ist — wir melden uns umgehend zurück.</p>
+    <div class="cta-stack">
+      <a href="tel:01773372984" class="cta-large cta-call">
+        <div class="cta-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.01L6.6 10.8z"/></svg>
         </div>
-        <div class="fg">
-          <label for="nachname">Nachname</label>
-          <input id="nachname" name="nachname" type="text" placeholder="Mustermann" required autocomplete="family-name">
+        <div class="cta-text">
+          <strong>Jetzt anrufen</strong>
+          <span>0177 / 337 29 84 — Nicole geht persönlich ran</span>
         </div>
-      </div>
-      <div class="fg">
-        <label for="telefon">Telefon</label>
-        <input id="telefon" name="telefon" type="tel" placeholder="0177 / ..." autocomplete="tel">
-      </div>
-      <div class="fg">
-        <label for="email">E-Mail</label>
-        <input id="email" name="email" type="email" placeholder="ihre@email.de" required autocomplete="email">
-      </div>
-      <div class="fg">
-        <label for="interesse">Ich interessiere mich für</label>
-        <select id="interesse" name="interesse">
-          <option>Haushaltsservice</option>
-          <option>Einkauf &amp; Besorgungen</option>
-          <option>Seniorenbegleitung</option>
-          <option>Garten &amp; Außenanlagen</option>
-          <option>Behördengänge</option>
-          <option>Sonstiges</option>
-        </select>
-      </div>
-      <div class="fg">
-        <label for="nachricht">Ihre Nachricht</label>
-        <textarea id="nachricht" name="nachricht" placeholder="Wie können wir Ihnen helfen?" required></textarea>
-      </div>
-      <div class="dsgvo-row">
-        <input type="checkbox" id="dsgvo" name="dsgvo" required>
-        <label for="dsgvo">Ich habe die <a onclick="openDrawer('datenschutz');return false;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *</label>
-      </div>
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <button type="submit" class="btn-submit">
-        <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
-        Anfrage absenden
-      </button>
-      <div class="form-status" id="formStatus"></div>
-    </form>
+        <span class="cta-arrow">→</span>
+      </a>
+
+      <a href="https://wa.me/491773372984" target="_blank" rel="noopener" class="cta-large cta-wa">
+        <div class="cta-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="cta-text">
+          <strong>WhatsApp schreiben</strong>
+          <span>Schnelle Antwort, kurze Wege</span>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+
+      <a href="mailto:info@minolo-gmbh.de?subject=Anfrage%20%C3%BCber%20die%20Website" class="cta-large cta-mail">
+        <div class="cta-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div class="cta-text">
+          <strong>E-Mail schreiben</strong>
+          <span>info@minolo-gmbh.de</span>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -2024,36 +2088,6 @@ window.addEventListener('scroll', () => {
     window.scrollY > 60 ? '0 4px 32px rgba(0,0,0,0.1)' : 'none';
 }, { passive: true });
 
-/* ====== FORMSPREE ASYNC SUBMIT ====== */
-(function () {
-  const form = document.getElementById('anfrageForm');
-  const status = document.getElementById('formStatus');
-  if (!form) return;
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    status.className = 'form-status';
-    status.textContent = '';
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        status.className = 'form-status success';
-        status.textContent = '✓ Vielen Dank! Ihre Anfrage ist bei uns eingegangen — wir melden uns persönlich.';
-        form.reset();
-      } else {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || 'Senden fehlgeschlagen');
-      }
-    } catch (err) {
-      status.className = 'form-status error';
-      status.textContent = '✗ Senden fehlgeschlagen. Bitte rufen Sie uns direkt an: 0177 / 337 29 84';
-    }
-  });
-})();
 </script>
 
 <!-- LEGAL DRAWERS -->
@@ -2235,8 +2269,8 @@ E-Mail: <a href="mailto:info@minolo-gmbh.de">info@minolo-gmbh.de</a></p>
 Bernhard-von-Lindenau-Platz 1, 01067 Dresden<br>
 <a href="https://www.saechsdsb.de" target="_blank">www.saechsdsb.de</a></p>
 
-<h2>8. Externe Dienstleister (Formular)</h2>
-<p>Das Kontaktformular wird über Formspree (Formspree Inc., USA) verarbeitet. Es gilt der EU-US Data Privacy Framework. Weitere Infos: <a href="https://formspree.io/legal/privacy-policy" target="_blank">Formspree Datenschutz</a>.</p>
+<h2>8. Externe Dienstleister</h2>
+<p>Diese Website nutzt keine externen Formulardienste. Kontaktaufnahme erfolgt direkt per Telefon, WhatsApp oder E-Mail an die im Impressum angegebenen Kontaktdaten. Für die Nutzung von WhatsApp gelten die <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank">Datenschutzbestimmungen von WhatsApp Ireland Ltd.</a></p>
 
 <h2>9. Aktualität</h2>
 <p>Stand: Mai 2026. Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen.</p>`;
