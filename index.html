@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minolo GmbH – Haushaltsservice & Alltagshilfe in Callenberg, Hohenstein-Ernstthal & Umgebung</title>
-<meta name="description" content="Minolo GmbH – Ihr persönlicher Alltagsservice in Callenberg. Haushaltsservice, Einkauf, Seniorenbegleitung, Garten, Behördengänge. Zuverlässig, regional, herzlich. Inhaberin Nicole Molch. Jetzt anrufen: 0177 / 337 29 84.">
-<meta name="keywords" content="Haushaltsservice Callenberg, Alltagshilfe Hohenstein-Ernstthal, Seniorenbegleitung Sachsen, Einkaufsservice, Behördengänge, Gartenpflege, Minolo GmbH, Nicole Molch">
+<title>Minolo GmbH – Dienstleistungsservice in Callenberg, Hohenstein-Ernstthal & Umgebung</title>
+<meta name="description" content="Minolo GmbH – Ihr persönlicher Dienstleistungsservice in Callenberg. Entlastungsleistungen, Reinigungsservice, Hausmeisterdienstleistungen. Zuverlässig, regional, herzlich. Geschäftsführerin Nicole Molch. Jetzt anrufen: 0177 / 337 29 84.">
+<meta name="keywords" content="Dienstleistungsservice Callenberg, Entlastungsleistungen Sachsen, Reinigungsservice Hohenstein-Ernstthal, Hausmeisterdienstleistungen, Winterdienst, Gartenpflege, Pflegekasse, Minolo GmbH, Nicole Molch">
 <meta name="author" content="Minolo GmbH">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#2D4A3E">
@@ -13,16 +13,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Minolo GmbH – Ihre Erleichterung im Alltag">
-<meta property="og:description" content="Persönlicher Alltagsservice in Callenberg & Umgebung: Haushalt, Einkauf, Senioren, Garten, Behörden. Zuverlässig & herzlich.">
+<meta property="og:title" content="Minolo GmbH – Der Molch für alle Fälle">
+<meta property="og:description" content="Persönlicher Dienstleistungsservice in Callenberg & Umgebung: Entlastungsleistungen, Reinigung, Hausmeisterdienstleistungen. Zuverlässig & herzlich.">
 <meta property="og:url" content="https://minolo-gmbh.de/">
 <meta property="og:site_name" content="Minolo GmbH">
 <meta property="og:image" content="https://bochmann-dienstleistungen.github.io/Minolo-GmbH-basic/Minolo_logo.jpg">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Minolo GmbH – Ihre Erleichterung im Alltag">
-<meta name="twitter:description" content="Persönlicher Alltagsservice in Callenberg & Umgebung. Haushalt, Einkauf, Senioren, Garten, Behörden.">
+<meta name="twitter:title" content="Minolo GmbH – Der Molch für alle Fälle">
+<meta name="twitter:description" content="Persönlicher Dienstleistungsservice in Callenberg & Umgebung. Entlastungsleistungen, Reinigung, Hausmeisterdienstleistungen.">
 <meta name="twitter:image" content="https://bochmann-dienstleistungen.github.io/Minolo-GmbH-basic/Minolo_logo.jpg">
 
 <!-- Favicon — echter Minolo-Molch -->
@@ -42,7 +42,8 @@
   "@id": "https://minolo-gmbh.de/#business",
   "name": "Minolo GmbH",
   "alternateName": "Minolo Dienstleistungsservice",
-  "description": "Persönlicher Alltagsservice in Callenberg und Umgebung: Haushaltsservice, Einkauf, Seniorenbegleitung, Garten, Behördengänge.",
+  "slogan": "Der Molch für alle Fälle",
+  "description": "Persönlicher Dienstleistungsservice in Callenberg und Umgebung: Entlastungsleistungen, Reinigungsservice, Hausmeisterdienstleistungen.",
   "url": "https://minolo-gmbh.de/",
   "telephone": "+49-177-3372984",
   "email": "info@minolo-gmbh.de",
@@ -51,7 +52,7 @@
   "founder": { "@type": "Person", "name": "Nicole Molch" },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Hauptstr. 73",
+    "streetAddress": "Am Kiefernberg 50",
     "postalCode": "09337",
     "addressLocality": "Callenberg",
     "addressRegion": "Sachsen",
@@ -68,10 +69,6 @@
     { "@type": "City", "name": "Limbach-Oberfrohna" },
     { "@type": "City", "name": "Glauchau" },
     { "@type": "City", "name": "Chemnitz" }
-  ],
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
   ],
   "priceRange": "€€",
   "sameAs": ["https://minolo-gmbh.de/"]
@@ -702,6 +699,30 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: rgba(184,147,90,0.15);
+  }
+  .leistungen-grid.leistungen-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .leistung-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .leistung-list li {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
+    padding: 8px 0 8px 22px;
+    border-bottom: 1px solid rgba(184,147,90,0.12);
+    position: relative;
+  }
+  .leistung-list li:last-child { border-bottom: none; }
+  .leistung-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 16px;
+    width: 10px; height: 1px;
+    background: var(--gold);
   }
 
   .leistung-card {
@@ -1651,7 +1672,6 @@
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ueber">Über uns</a></li>
-    <li><a href="#bewertungen">Bewertungen</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <div class="nav-actions">
@@ -1671,7 +1691,6 @@
   <ul>
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ueber">Über uns</a></li>
-    <li><a href="#bewertungen">Bewertungen</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
     <li><a href="tel:01773372984">📞 0177 / 337 29 84</a></li>
   </ul>
@@ -1681,7 +1700,7 @@
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-slide">
-      <img src="https://images.pexels.com/photos/7818422/pexels-photo-7818422.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Behördengänge — wir begleiten Sie persönlich">
+      <img src="rasen-heckenschnitt.jpg" alt="Gartenpflege & Heckenschnitt — Hausmeisterdienstleistungen">
     </div>
     <div class="hero-slide">
       <img src="https://images.pexels.com/photos/9462164/pexels-photo-9462164.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Sorgfältige Reinigung Ihres Zuhauses">
@@ -1739,34 +1758,41 @@
     <p class="sec-eyebrow">Was wir für Sie tun</p>
     <h2 class="sec-title">Unsere <em>Leistungen</em></h2>
   </div>
-  <div class="leistungen-grid">
+  <div class="leistungen-grid leistungen-grid-4">
     <div class="leistung-card reveal">
       <div class="leistung-num">01</div>
-      <h3 class="leistung-name">Haushaltsservice</h3>
-      <p class="leistung-desc">Reinigung, Ordnung und Organisation Ihres Zuhauses — zuverlässig, diskret und nach Ihren Wünschen durchgeführt.</p>
+      <h3 class="leistung-name">Entlastungsleistungen</h3>
+      <ul class="leistung-list">
+        <li>Reinigungsservice</li>
+        <li>Wäschedienst</li>
+        <li>Einkaufsservice</li>
+        <li>Begleitung zum Arzt oder zu anderen Terminen</li>
+        <li>Kostenerstattung als Entlastungsbetrag über die Pflegekasse möglich</li>
+      </ul>
     </div>
     <div class="leistung-card reveal">
       <div class="leistung-num">02</div>
-      <h3 class="leistung-name">Einkauf & Besorgungen</h3>
-      <p class="leistung-desc">Wir erledigen Ihre Einkäufe und tägliche Besorgungen — pünktlich, verlässlich und genau so, wie Sie es möchten.</p>
+      <h3 class="leistung-name">Reinigungsservice</h3>
+      <ul class="leistung-list">
+        <li>Reinigung der eigenen vier Wände</li>
+        <li>Hausordnung</li>
+        <li>Fensterreinigung</li>
+        <li>Büroreinigung</li>
+      </ul>
     </div>
     <div class="leistung-card reveal">
       <div class="leistung-num">03</div>
-      <h3 class="leistung-name">Seniorenbegleitung</h3>
-      <p class="leistung-desc">Begleitung und Alltagsunterstützung für ältere Menschen — mit echtem Herz, Geduld und persönlichem Engagement.</p>
+      <h3 class="leistung-name">Hausmeisterdienstleistungen</h3>
+      <ul class="leistung-list">
+        <li>Durchführung kleinerer Reparaturen</li>
+        <li>Pflege von Grundstück und Garten (z. B. Rasenmähen, Heckenschnitt)</li>
+        <li>Winterdienst</li>
+        <li>Reinigung der Außenbereiche und Gehwege</li>
+        <li>Zaunbau, Pflasterarbeiten für Gehwege, Parkplätze u. v. m.</li>
+      </ul>
     </div>
     <div class="leistung-card reveal">
       <div class="leistung-num">04</div>
-      <h3 class="leistung-name">Garten & Außenanlagen</h3>
-      <p class="leistung-desc">Pflege von Garten, Terrasse und Außenbereichen — damit Ihr Umfeld gepflegt und einladend wirkt, das ganze Jahr.</p>
-    </div>
-    <div class="leistung-card reveal">
-      <div class="leistung-num">05</div>
-      <h3 class="leistung-name">Behördengänge</h3>
-      <p class="leistung-desc">Begleitung bei Terminen und Formularen — wir nehmen Ihnen Bürokratie und Stress zuverlässig ab.</p>
-    </div>
-    <div class="leistung-card reveal">
-      <div class="leistung-num">06</div>
       <h3 class="leistung-name">Individuelle Wünsche</h3>
       <p class="leistung-desc">Besondere Anforderungen? Sprechen Sie uns an — gemeinsam finden wir die passende Lösung für Sie.</p>
     </div>
@@ -1779,52 +1805,29 @@
   <!-- Story -->
   <div class="ueber-story">
     <div class="ueber-story-img">
-      <img src="nicole-team.jpg" alt="Nicole Molch – Inhaberin Minolo GmbH">
+      <img src="stefan-nicole.jpg" alt="Stefan und Nicole Molch – Geschäftsführung Minolo GmbH">
       <div class="ueber-story-overlay"></div>
     </div>
     <div class="ueber-story-text reveal">
       <p class="sec-eyebrow">Unsere Geschichte</p>
       <h2 class="sec-title white">Wer wir <em>sind</em></h2>
-      <p>Die Minolo GmbH ist Ihr persönlicher Alltagsservice in Callenberg und der Region. Gegründet aus dem Wunsch heraus, Menschen in ihrem Alltag wirklich zu entlasten — nicht als anonyme Firma, sondern als verlässlicher Nachbar.</p>
-      <p>Wir kennen unsere Kunden persönlich. Wir wissen, worauf es ankommt: Pünktlichkeit, Diskretion und echte Sorgfalt. Jeder Auftrag wird behandelt, als wäre es unser eigener Haushalt.</p>
-      <p>Nicole Molch führt das Unternehmen mit vollem Einsatz und einer klaren Philosophie: Qualität ohne Wenn und Aber, und immer ein offenes Ohr für Ihre Bedürfnisse.</p>
+      <p>Die Minolo GmbH ist Ihr persönlicher Dienstleistungsservice in Callenberg und der Region. Entstanden aus dem echten Wunsch, Menschen zu unterstützen, zu entlasten und den Alltag spürbar zu erleichtern – nicht als anonyme Firma, sondern als verlässlicher Partner an Ihrer Seite.</p>
+      <p>Bereits 2019 standen Nicole und Stefan Molch selbst vor der Herausforderung, eine zuverlässige Firma für die Betreuung ihrer Immobilien zu finden. Schnell wurde klar: Es fehlt an einem Dienstleister, der Qualität, Vertrauen und persönlichen Einsatz wirklich miteinander verbindet. Aus dieser Idee entstand der Minolo Dienstleistungsservice.</p>
+      <p>Im Oktober 2022 wurde zusätzlich deutlich, wie groß der Bedarf an hochwertigen Entlastungsleistungen für ältere Menschen und Familien im Alltag ist – besonders bei Unterstützung im Haushalt und rund ums Haus. Anfang 2023 wurde daraus die Minolo GmbH gegründet, mit dem Ziel, Menschen nicht nur bei Immobilienservices, sondern auch im täglichen Leben zuverlässig zu unterstützen.</p>
+      <p>Heute vereinen wir Hausmeisterservice, Privatreinigung und Entlastungsleistungen zu einem Rundum-Service, der sich nicht nur um Gebäude, sondern vor allem um Menschen kümmert. Mit Sorgfalt, Diskretion und höchster Zuverlässigkeit setzen wir uns täglich dafür ein, Ihnen den Rücken freizuhalten.</p>
+      <p>Unsere Werte bilden dabei die Grundlage unseres Handelns: Transparenz, Freundlichkeit, Qualität und Zuverlässigkeit. Unser Anspruch ist es, mit persönlichem Einsatz und einem offenen Ohr für Ihre Bedürfnisse genau die Unterstützung zu bieten, die Ihren Alltag leichter macht – damit Sie sich auf das konzentrieren können, was wirklich zählt.</p>
       <div class="ueber-signature">
         <div class="ueber-sig-line">
           <span class="ueber-sig-name">Nicole Molch</span>
-          <span class="ueber-sig-role">Inhaberin · Minolo GmbH · Callenberg</span>
+          <span class="ueber-sig-role">Geschäftsführerin · Minolo GmbH · Callenberg</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Values -->
-  <div class="ueber-values">
-    <div class="ueber-value reveal">
-      <span class="ueber-value-icon">🤝</span>
-      <h3 class="ueber-value-title">Vertrauen</h3>
-      <p class="ueber-value-desc">Diskretion und Respekt sind für uns selbstverständlich — Sie öffnen uns Ihre Tür, das nehmen wir ernst.</p>
-    </div>
-    <div class="ueber-value reveal">
-      <span class="ueber-value-icon">⏱</span>
-      <h3 class="ueber-value-title">Zuverlässigkeit</h3>
-      <p class="ueber-value-desc">Termine werden eingehalten. Versprechen auch. Ohne Ausrede, ohne Wenn und Aber.</p>
-    </div>
-    <div class="ueber-value reveal">
-      <span class="ueber-value-icon">💎</span>
-      <h3 class="ueber-value-title">Qualität</h3>
-      <p class="ueber-value-desc">Wir arbeiten sorgfältig und gewissenhaft — jedes Mal. Weil Halbherzigkeit für uns keine Option ist.</p>
-    </div>
-    <div class="ueber-value reveal">
-      <span class="ueber-value-icon">🏘</span>
-      <h3 class="ueber-value-title">Regional</h3>
-      <p class="ueber-value-desc">Wir sind Ihr Partner vor Ort — nicht irgendwo, sondern genau hier, in Callenberg und der Region.</p>
-    </div>
-  </div>
-
-  <!-- Quote Banner -->
+  <!-- Motto Banner -->
   <div class="ueber-quote-banner">
-    <blockquote>„Wir stehen für Zuverlässigkeit, kompetente und qualitativ hochwertige Arbeit — und dafür, dass Sie sich in guten Händen fühlen."</blockquote>
-    <cite>Nicole Molch · Inhaberin, Minolo GmbH</cite>
+    <blockquote>„Der Molch für alle Fälle!"</blockquote>
   </div>
 
   <!-- Team -->
@@ -1835,13 +1838,13 @@
       <div class="team-card reveal">
         <div class="team-avatar">NM</div>
         <p class="team-name">Nicole Molch</p>
-        <p class="team-role">Inhaberin & Geschäftsführerin</p>
+        <p class="team-role">Geschäftsführerin</p>
         <p class="team-desc">Mit Herzblut dabei, seit Tag eins. Nicole führt das Unternehmen persönlich und ist direkter Ansprechpartner für jeden Kunden.</p>
       </div>
       <div class="team-card reveal">
         <div class="team-avatar">MT</div>
         <p class="team-name">Ihr Team</p>
-        <p class="team-role">Alltagsservice & Begleitung</p>
+        <p class="team-role">Dienstleistungsservice</p>
         <p class="team-desc">Unser eingespieltes Team kennt die Region, die Kunden und ihre Bedürfnisse — zuverlässig und immer freundlich.</p>
       </div>
       <div class="team-card reveal">
@@ -1855,57 +1858,6 @@
     </div>
   </div>
 
-</section>
-
-<!-- BEWERTUNGEN -->
-<section class="reviews" id="bewertungen">
-  <div class="reviews-header reveal">
-    <p class="sec-eyebrow">Stimmen unserer Kunden</p>
-    <h2 class="sec-title">Was unsere Kunden<br><em>über uns sagen</em></h2>
-    <p>Vertrauen entsteht durch Verlässlichkeit – und genau das hören wir am häufigsten zurück.</p>
-    <div class="reviews-stars-overall">
-      <div class="stars-row">★★★★★</div>
-      <span>5,0 / 5,0 · auf Empfehlung unserer Kunden</span>
-    </div>
-  </div>
-
-  <div class="reviews-grid">
-    <article class="review-card reveal">
-      <div class="stars-row">★★★★★</div>
-      <p class="review-quote">Nicole und ihr Team haben mir den Alltag enorm erleichtert. Pünktlich, freundlich und gründlich – ich kann Minolo jedem empfehlen, der etwas Entlastung braucht.</p>
-      <div class="review-author">
-        <div class="review-avatar">IK</div>
-        <div class="review-meta">
-          <strong>Ingrid K.</strong>
-          <span>Hohenstein-Ernstthal · Haushaltsservice</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="review-card reveal">
-      <div class="stars-row">★★★★★</div>
-      <p class="review-quote">Meine Mutter wird zweimal pro Woche begleitet – immer dieselbe Vertrauensperson, immer pünktlich. Endlich eine Hilfe, auf die wirklich Verlass ist. Vielen Dank!</p>
-      <div class="review-author">
-        <div class="review-avatar">SM</div>
-        <div class="review-meta">
-          <strong>Stefan M.</strong>
-          <span>Callenberg · Seniorenbegleitung</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="review-card reveal">
-      <div class="stars-row">★★★★★</div>
-      <p class="review-quote">Wir haben Minolo für unsere Gartenpflege angefragt – schnelle Antwort, faires Angebot, sauberes Ergebnis. Werden wir auf jeden Fall weiterempfehlen.</p>
-      <div class="review-author">
-        <div class="review-avatar">RW</div>
-        <div class="review-meta">
-          <strong>Renate W.</strong>
-          <span>Limbach-Oberfrohna · Garten</span>
-        </div>
-      </div>
-    </article>
-  </div>
 </section>
 
 <!-- KONTAKT -->
@@ -1947,13 +1899,10 @@
       </a>
     </div>
 
-    <!-- Öffnungszeiten -->
+    <!-- Termine -->
     <div class="hours-card">
-      <h4>Öffnungszeiten</h4>
-      <div class="hours-row"><span class="day">Montag – Freitag</span><span class="time">8:00 – 18:00</span></div>
-      <div class="hours-row"><span class="day">Samstag</span><span class="time">9:00 – 13:00</span></div>
-      <div class="hours-row closed"><span class="day">Sonntag</span><span class="time">geschlossen</span></div>
-      <p class="hours-note">Termine außerhalb der Zeiten gerne nach Absprache — rufen Sie uns einfach an.</p>
+      <h4>Termine</h4>
+      <p class="hours-note">Termine gerne nach Absprache — rufen Sie uns einfach an.</p>
     </div>
 
     <!-- Google Maps -->
@@ -1973,7 +1922,7 @@
   <div class="footer-top">
     <div class="footer-brand">
       <img src="Minolo_logo.png" alt="Minolo GmbH" style="height:44px;width:auto;display:block;margin-bottom:18px;">
-      <p>Ihr persönlicher Alltagsservice in Callenberg und Umgebung — zuverlässig, herzlich, vor Ort.</p>
+      <p>Ihr persönlicher Dienstleistungsservice in Callenberg und Umgebung — zuverlässig, herzlich, vor Ort.</p>
       <a href="https://wa.me/491773372984" class="footer-wa-btn" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp schreiben
@@ -1984,18 +1933,15 @@
       <ul>
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ueber">Über uns</a></li>
-        <li><a href="#bewertungen">Bewertungen</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Leistungen</h4>
       <ul>
-        <li><a href="#">Haushaltsservice</a></li>
-        <li><a href="#">Einkauf & Besorgungen</a></li>
-        <li><a href="#">Seniorenbegleitung</a></li>
-        <li><a href="#">Garten & Außenanlagen</a></li>
-        <li><a href="#">Behördengänge</a></li>
+        <li><a href="#leistungen">Entlastungsleistungen</a></li>
+        <li><a href="#leistungen">Reinigungsservice</a></li>
+        <li><a href="#leistungen">Hausmeisterdienstleistungen</a></li>
       </ul>
     </div>
     <div class="footer-col">
