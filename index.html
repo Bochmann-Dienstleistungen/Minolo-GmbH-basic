@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png">
 
 <link rel="canonical" href="https://minolo-gmbh.de/">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=cormorant-garamond:300,300i,400,400i,600,600i|dm-sans:300,400,500,600&display=swap" rel="stylesheet">
 
 <!-- Schema.org LocalBusiness -->
 <script type="application/ld+json">
@@ -1339,6 +1339,43 @@
     transition: filter 0.3s;
   }
   .map-wrap:hover iframe { filter: grayscale(0) contrast(1); }
+  .map-consent {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, #f4ecdc 0%, #e8dcc0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  .map-consent-inner { max-width: 420px; }
+  .map-consent strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #2a1f12;
+    margin-bottom: 10px;
+  }
+  .map-consent p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #4a3d2a;
+    margin-bottom: 14px;
+  }
+  .map-consent p a { color: #8b6914; text-decoration: underline; }
+  .map-consent-btn {
+    background: #2a1f12;
+    color: #f4ecdc;
+    border: 0;
+    padding: 11px 26px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+  }
+  .map-consent-btn:hover { background: #8b6914; }
 
   /* ===================== DSGVO + FORM ===================== */
   .dsgvo-row {
@@ -1706,14 +1743,15 @@
       <p class="hours-note">Termine gerne nach Absprache — rufen Sie uns einfach an.</p>
     </div>
 
-    <!-- Google Maps -->
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps?q=Hauptstr.+73,+09337+Callenberg&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Standort Minolo GmbH – Hauptstr. 73, 09337 Callenberg"
-        allowfullscreen></iframe>
+    <!-- Google Maps (Click-to-Load, DSGVO-konform) -->
+    <div class="map-wrap" id="mapWrap">
+      <div class="map-consent" id="mapConsent">
+        <div class="map-consent-inner">
+          <strong>Karte laden</strong>
+          <p>Mit Klick laden Sie eine Karte von Google Maps. Dabei werden Daten (u.&nbsp;a. Ihre IP-Adresse) an Google übertragen. Details in unserer <a href="#" onclick="openDrawer('datenschutz');return false;">Datenschutzerklärung</a>.</p>
+          <button type="button" class="map-consent-btn" onclick="loadMap()">Karte anzeigen</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1982,8 +2020,11 @@ E-Mail: <a href="mailto:info@minolo-gmbh.de">info@minolo-gmbh.de</a></p>
 <h2>5. Cookies</h2>
 <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind. Es werden keine Tracking- oder Marketing-Cookies eingesetzt. Eine Einwilligung ist hierfür nicht erforderlich (§ 25 Abs. 2 TDDDG).</p>
 
-<h2>6. Google Maps</h2>
-<p>Diese Seite nutzt den Kartendienst Google Maps der Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland. Bei der Nutzung von Google Maps können Daten an Google-Server übertragen werden. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank">Google Datenschutzerklärung</a>.</p>
+<h2>6. Google Maps (Karte mit Einwilligung)</h2>
+<p>Diese Website nutzt den Kartendienst Google Maps der Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland. Die Karte wird <strong>erst nach aktiver Einwilligung</strong> (Klick auf „Karte anzeigen") geladen. Vorher werden keine Daten an Google übertragen. Mit dem Klick werden u.&nbsp;a. Ihre IP-Adresse, Browser- und Geräteinformationen an Google übermittelt, ggf. auch in die USA. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie die Seite neu laden. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank">Google Datenschutzerklärung</a>.</p>
+
+<h2>6a. Schriftarten (Bunny Fonts)</h2>
+<p>Zur einheitlichen Darstellung von Schriftarten nutzen wir Bunny Fonts, einen datenschutzfreundlichen Webfont-Dienst der BunnyWay d.o.o., Cesta komandanta Staneta 4A, 4000 Kranj, Slowenien (EU). Die Schriftarten werden ausschließlich von Servern innerhalb der EU geladen. Es findet keine Übertragung in Drittländer statt, es werden keine Cookies gesetzt und keine personenbezogenen Daten an Dritte (insbesondere nicht an Google) übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer ansprechenden Darstellung). Weitere Informationen: <a href="https://fonts.bunny.net/legal" target="_blank">Bunny Fonts Datenschutz</a>.</p>
 
 <h2>7. Ihre Rechte</h2>
 <p>Sie haben jederzeit das Recht auf:</p>
@@ -2006,7 +2047,7 @@ Bernhard-von-Lindenau-Platz 1, 01067 Dresden<br>
 <p>Diese Website nutzt keine externen Formulardienste. Kontaktaufnahme erfolgt direkt per Telefon, WhatsApp oder E-Mail an die im Impressum angegebenen Kontaktdaten. Für die Nutzung von WhatsApp gelten die <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank">Datenschutzbestimmungen von WhatsApp Ireland Ltd.</a></p>
 
 <h2>10. Aktualität</h2>
-<p>Stand: Mai 2026. Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen.</p>`;
+<p>Stand: 20. Mai 2026. Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen.</p>`;
 
 function openDrawer(type) {
   document.getElementById('drawerTitle').textContent = type === 'impressum' ? 'Impressum' : 'Datenschutzerklärung';
@@ -2023,6 +2064,11 @@ function closeDrawer() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+function loadMap() {
+  const wrap = document.getElementById('mapWrap');
+  wrap.innerHTML = '<iframe src="https://www.google.com/maps?q=Hauptstr.+73,+09337+Callenberg&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort Minolo GmbH – Hauptstr. 73, 09337 Callenberg" allowfullscreen></iframe>';
+}
 </script>
 </body>
 </html>
